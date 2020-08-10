@@ -7,16 +7,25 @@ import {
   StatusBar,
   View
 } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { colors } from "../constants";
+import { COLORS } from "../theme";
 
 const chairImage = require("../assets/chair.jpg");
 
 export default function ViewImageScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.closePlaceholder}></View>
-      <View style={styles.deletePlaceholder}></View>
+      <View style={styles.closePlaceholder}>
+        <MaterialCommunityIcons name="close" color="white" size={45} />
+      </View>
+      <View style={styles.deletePlaceholder}>
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          color="white"
+          size={45}
+        />
+      </View>
       <Image source={chairImage} style={styles.image} />
     </SafeAreaView>
   );
@@ -26,21 +35,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    backgroundColor: colors.black
+    backgroundColor: COLORS.black
   },
   closePlaceholder: {
     height: 50,
     width: 50,
-    backgroundColor: colors.red,
     position: "absolute",
+    justifyContent: "center",
+    alignItems: "center",
     left: 30,
     top: StatusBar.currentHeight || 40
   },
   deletePlaceholder: {
     height: 50,
     width: 50,
-    backgroundColor: colors.green,
     position: "absolute",
+    justifyContent: "center",
+    alignItems: "center",
     right: 30,
     top: StatusBar.currentHeight || 40
   },
