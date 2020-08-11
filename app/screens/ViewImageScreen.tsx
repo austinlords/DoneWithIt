@@ -17,13 +17,13 @@ export default function ViewImageScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.closePlaceholder}>
-        <MaterialCommunityIcons name="close" color="white" size={45} />
+        <MaterialCommunityIcons name="close" color="white" size={35} />
       </View>
       <View style={styles.deletePlaceholder}>
         <MaterialCommunityIcons
           name="trash-can-outline"
           color="white"
-          size={45}
+          size={35}
         />
       </View>
       <Image source={chairImage} style={styles.image} />

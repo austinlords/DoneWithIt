@@ -2,6 +2,7 @@ import React from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
 
 import { COLORS } from "../theme";
+import ListItem from "../components/ListItem";
 
 export interface ListingDetailsProps {}
 
@@ -15,16 +16,11 @@ const ListingDetails: React.SFC<ListingDetailsProps> = () => {
       <View style={styles.content}>
         <Text style={styles.title}>Red jacket for sale</Text>
         <Text style={styles.price}>$100</Text>
-        <View style={styles.authorContainer}>
-          <Image
-            source={require("../assets/mosh.jpg")}
-            style={styles.authorImage}
-          />
-          <View>
-            <Text style={styles.authorName}>Mosh Hamedani</Text>
-            <Text style={styles.authorListings}>5 Listings</Text>
-          </View>
-        </View>
+        <ListItem
+          title="Mosh Hamedani"
+          subtitle="5 Listings"
+          image={require("../assets/mosh.jpg")}
+        />
       </View>
     </View>
   );
@@ -64,7 +60,7 @@ const styles = StyleSheet.create({
     color: COLORS.secondary,
     fontWeight: "bold",
     fontSize: 20,
-    marginBottom: 50
+    marginBottom: 40
   },
   title: {
     fontSize: 24,

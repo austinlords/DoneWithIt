@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
+import AppText from "./AppText";
 import { COLORS } from "../theme";
 
 export interface CardProps {
@@ -14,8 +15,8 @@ const Card: React.SFC<CardProps> = ({ title, subtitle, image }: CardProps) => {
     <>
       <Image source={image} style={styles.image} />
       <View style={styles.text}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtitle}>{subtitle}</Text>
+        <AppText style={styles.title}>{title}</AppText>
+        <AppText style={styles.subtitle}>{subtitle}</AppText>
       </View>
     </>
   );

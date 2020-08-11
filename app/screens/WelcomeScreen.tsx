@@ -9,7 +9,7 @@ import {
   ImageBackground
 } from "react-native";
 
-import Button from "../components/Button";
+import AppButton from "../components/AppButton";
 
 const backgroundImage = require("../assets/background.jpg");
 const logo = require("../assets/logo-red.png");
@@ -17,7 +17,7 @@ const logo = require("../assets/logo-red.png");
 export default function WelcomeScreen() {
   return (
     <ImageBackground
-      blurRadius={5}
+      blurRadius={10}
       source={backgroundImage}
       style={styles.backgroundImage}
     >
@@ -29,10 +29,12 @@ export default function WelcomeScreen() {
           </Text>
         </View>
         <View style={styles.buttonHolder}>
-          <Button width="90%">login</Button>
-          <Button width="90%" color="secondary">
+          <AppButton onPress={() => console.log("tapped")} color="primary">
+            login
+          </AppButton>
+          <AppButton onPress={() => console.log("tapped")} color="secondary">
             register
-          </Button>
+          </AppButton>
         </View>
       </View>
     </ImageBackground>
