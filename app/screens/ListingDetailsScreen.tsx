@@ -4,9 +4,9 @@ import { View, StyleSheet, Image, Text } from "react-native";
 import { COLORS } from "../theme";
 import ListItem from "../components/ListItem";
 
-export interface ListingDetailsProps {}
+export interface ListingDetailsScreenProps {}
 
-const ListingDetails: React.SFC<ListingDetailsProps> = () => {
+const ListingDetailsScreen: React.SFC<ListingDetailsScreenProps> = () => {
   return (
     <View style={styles.container}>
       <Image
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ListingDetails;
+export default ListingDetailsScreen;

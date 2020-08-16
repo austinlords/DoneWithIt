@@ -4,9 +4,9 @@ import { View, StyleSheet } from "react-native";
 import Card from "../components/Card";
 import { COLORS } from "../theme";
 
-export interface ListingProps {}
+export interface ListingsScreenProps {}
 
-const Listing: React.SFC<ListingProps> = () => {
+const ListingsScreen: React.SFC<ListingsScreenProps> = () => {
   return (
     <View style={styles.container}>
       <View style={styles.cardHolder}>
@@ -14,6 +14,13 @@ const Listing: React.SFC<ListingProps> = () => {
           title="Red Jacket for Sale!"
           subtitle="$100"
           image={require("../assets/jacket.jpg")}
+        />
+      </View>
+      <View style={styles.cardHolder}>
+        <Card
+          title="Couch in great condition"
+          subtitle="$1000"
+          image={require("../assets/couch.jpg")}
         />
       </View>
     </View>
@@ -27,9 +34,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.lightGray
   },
   cardHolder: {
-    height: 500,
-    padding: 30,
+    paddingHorizontal: 30,
     marginBottom: 20
   }
 });
-export default Listing;
+export default ListingsScreen;
