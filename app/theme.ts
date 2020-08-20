@@ -8,7 +8,8 @@ const colors = [
   "medium",
   "danger",
   "lightDanger",
-  "yellow"
+  "yellow",
+  "dark"
 ] as const;
 
 export type ColorsType = typeof colors[number];
@@ -22,7 +23,8 @@ export const COLORS: Record<ColorsType, string> = {
   medium: "#6e6969",
   danger: "#ff5252",
   lightDanger: "#ff8888",
-  yellow: "#ffe66d"
+  yellow: "#ffe66d",
+  dark: "#0c0c0c"
 };
 
 export enum Colors {

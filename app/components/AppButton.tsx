@@ -3,28 +3,29 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  GestureResponderEvent
+  GestureResponderEvent,
+  ButtonProps
 } from "react-native";
 
-import { COLORS, ColorsType } from "../theme";
+import defaultStyles from "../config/styles";
 
-export interface AppButtonProps {
-  color: ColorsType;
-  children?: React.ReactNode;
-  onPress: (event: GestureResponderEvent) => void;
+export interface AppButtonProps extends ButtonProps {
+  color: string;
+  onPress: () => void;
+  title: string;
 }
 
 const AppButton: React.SFC<AppButtonProps> = ({
-  color = COLORS.primary,
-  children,
-  onPress
+  color = defaultStyles.colors.primary,
+  onPress,
+  title
 }) => {
   return (
     <TouchableOpacity
-      style={[styles.shape, { backgroundColor: COLORS[color as ColorsType] }]}
+      style={[styles.shape, { backgroundColor: color }]}
       onPress={onPress}
     >
-      <Text style={styles.text}>{children}</Text>
+      <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textTransform: "uppercase",
-    color: COLORS.white,
+    color: defaultStyles.colors.white,
     fontWeight: "bold",
     fontSize: 18
   }

@@ -12,18 +12,18 @@ export interface MyAccountScreenProps {}
 
 const MyAccountScreen: React.SFC<MyAccountScreenProps> = () => {
   return (
-    <Screen style={styles.container}>
-      <ListItem
-        image={require("../assets/mosh.jpg")}
-        title="Mosh Hamadani"
-        subtitle="programmingwithmosh@gmail.com"
-        style={{
-          backgroundColor: COLORS.white,
-          marginTop: 30,
-          marginBottom: 50
-        }}
-      />
-      <View style={styles.menuItemsContainer}>
+    <Screen style={styles.screen}>
+      <View style={styles.container}>
+        <ListItem
+          image={require("../assets/mosh.jpg")}
+          title="Mosh Hamadani"
+          subtitle="programmingwithmosh@gmail.com"
+          style={{
+            backgroundColor: COLORS.white
+          }}
+        />
+      </View>
+      <View style={styles.container}>
         <MenuItem
           iconColor="primary"
           text="My Listings"
@@ -49,11 +49,11 @@ const MyAccountScreen: React.SFC<MyAccountScreenProps> = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     backgroundColor: COLORS.lightGray
   },
-  menuItemsContainer: {
-    marginBottom: 20
+  container: {
+    marginVertical: 20
   }
 });
 
